@@ -22,10 +22,10 @@ namespace <?= $generator->ns ?>;
 use Yii;
 
 /**
- * Project : ${project} 
+ * Project : <?= ${project} ?>
  * Class : <?= $generator->ns ?>/<?= $className ?>
  * Author : Janagaran V (vjanagaran@gmail.com)
- * Created : ${date}
+ * Created : <?= date("d-M-Y H:i P") ?>
  * 
  * This is the model class for table "<?= $generator->generateTableName($tableName) ?>".
  *
