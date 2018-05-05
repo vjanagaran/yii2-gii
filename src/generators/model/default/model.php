@@ -22,6 +22,11 @@ namespace <?= $generator->ns ?>;
 use Yii;
 
 /**
+ * Project : ${project} 
+ * Class : model/<?= $generator->generateTableName($tableName) ?>
+ * Author : Janagaran V (vjanagaran@gmail.com)
+ * Created : ${date}
+ * 
  * This is the model class for table "<?= $generator->generateTableName($tableName) ?>".
  *
 <?php foreach ($properties as $property => $data): ?>
@@ -34,13 +39,11 @@ use Yii;
 <?php endforeach; ?>
 <?php endif; ?>
  */
-class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . "\n" ?>
-{
+class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . "\n" ?> {
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return '<?= $generator->generateTableName($tableName) ?>';
     }
 <?php if ($generator->db !== 'db'): ?>
@@ -48,8 +51,7 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
     /**
      * @return \yii\db\Connection the database connection used by this AR class.
      */
-    public static function getDb()
-    {
+    public static function getDb() {
         return Yii::$app->get('<?= $generator->db ?>');
     }
 <?php endif; ?>
@@ -57,16 +59,14 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [<?= empty($rules) ? '' : ("\n            " . implode(",\n            ", $rules) . ",\n        ") ?>];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
 <?php foreach ($labels as $name => $label): ?>
             <?= "'$name' => " . $generator->generateString($label) . ",\n" ?>
@@ -78,8 +78,7 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function get<?= $name ?>()
-    {
+    public function get<?= $name ?>() {
         <?= $relation[0] . "\n" ?>
     }
 <?php endforeach; ?>
@@ -92,8 +91,7 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
      * {@inheritdoc}
      * @return <?= $queryClassFullName ?> the active query used by this AR class.
      */
-    public static function find()
-    {
+    public static function find() {
         return new <?= $queryClassFullName ?>(get_called_class());
     }
 <?php endif; ?>
