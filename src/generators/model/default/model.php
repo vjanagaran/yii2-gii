@@ -23,7 +23,7 @@ use Yii;
 
 /**
  * Project : ${project} 
- * Class : models/<?= $generator->generateTableName($tableName) ?>
+ * Class : <?= $generator->ns ?>/<?= $className ?>
  * Author : Janagaran V (vjanagaran@gmail.com)
  * Created : ${date}
  * 
