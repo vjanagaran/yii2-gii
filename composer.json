@@ -1,6 +1,6 @@
 {
-    "name": "yiisoft/yii2-gii",
-    "description": "The Gii extension for the Yii framework",
+    "name": "vjanagaran/yii2-gii",
+    "description": "The Gii extension for the Yii framework updated for NetBeans auto-formated structure",
     "keywords": ["yii2", "gii", "code generator"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
